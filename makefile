@@ -1,17 +1,17 @@
-GCCPARAMS = -m32 -Iinclude -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore
-ASPARAMS = --32
-LDPARAMS = -melf_i386
-
-
-CC = gcc
-LD = ld
+CC 	= gcc
+LD 	= ld
 ASM = as
+
+
+GCCPARAMS 	= -m32 -Iinclude -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore
+ASPARAMS 	= --32
+LDPARAMS 	= -melf_i386
 
 
 CPP_SOURCES = $(shell find . -name "*.cpp")
 CPP_OBJECTS = $(patsubst %.cpp, %.o, $(CPP_SOURCES))
-S_SOURCES = $(shell find . -name "*.s")
-S_OBJECTS = $(patsubst %.s, %.o, $(S_SOURCES))
+S_SOURCES 	= $(shell find . -name "*.s")
+S_OBJECTS 	= $(patsubst %.s, %.o, $(S_SOURCES))
 
 
 %.o: %.cpp
